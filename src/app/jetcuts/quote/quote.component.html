@@ -1,0 +1,109 @@
+<app-navbar></app-navbar>
+
+<div
+  class="site-blocks-cover inner-page overlay"
+  style="background-image: url(assets/images/hero_bg_2.jpg);"
+  data-aos="fade"
+  data-stellar-background-ratio="0.5"
+>
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-8 text-center">
+        <h1 class="mb-5">Get your <strong>FREE </strong> Quote</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="site-section bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-8 mb-5">
+        <form class="text-center border border-light p-5" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <p class="h4 mb-4">Request a Quote</p>
+
+          <!-- Name -->
+          <input
+            type="text"
+            formControlName="contactFormName"
+            id="defaultContactFormName"
+            mdbInput
+            class="form-control mb-4"
+            placeholder="Name"
+          />
+
+          <!-- Email -->
+          <input
+            type="email"
+            formControlName="contactFormEmail"
+            id="defaultContactFormEmail"
+            mdbInput
+            class="form-control mb-4"
+            placeholder="E-mail"
+          />
+
+          <!-- Subject -->
+          <label>Subject</label>
+          <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+            <option value="" disabled>Choose File Type</option>
+            <option value="2">Other</option>
+            <option value="3">DWG File</option>
+            <option value="4">DXF File </option>
+          </select>
+
+          <!-- Message -->
+          <div class="form-group">
+            <textarea
+              formControlName="contactFormMessage"
+              class="form-control rounded-0"
+              mdbInput
+              id="exampleFormControlTextarea2"
+              rows="3"
+              placeholder="Message"
+            ></textarea>
+          </div>
+
+          <!-- Copy -->
+          <!-- <mdb-checkbox [default]="true" class="mb-4">Send me a copy of this message</mdb-checkbox> -->
+
+          <!-- Send button -->
+          <button
+            mdbBtn
+            color="info"
+            outline="true"
+            block="true"
+            class="z-depth-0 my-4 waves-effect"
+            mdbWavesEffect
+            type="submit"
+            [disabled]="disabledSubmitButton"
+          >
+            Send
+          </button>
+        </form>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="p-4 mb-3 bg-white">
+          <h3 class="h5 text-black mb-3">Contact Info</h3>
+          <p class="mb-0 font-weight-bold">Address</p>
+          <p class="mb-4">16685 W. Victor Road, New Berlin, WI 53151, USA</p>
+
+          <p class="mb-0 font-weight-bold">Phone</p>
+          <p class="mb-4"><a href="#">+1 262 993 9402</a></p>
+
+          <p class="mb-0 font-weight-bold">Email Address</p>
+          <p class="mb-0"><a href="#">shannon@jetcutswi.com</a></p>
+        </div>
+
+        <div class="p-4 mb-3 bg-white">
+          <h3 class="h5 text-black mb-3">Note</h3>
+          <p>
+            Once your quote request is submitted you will receive an email with a confirmation number that can be used
+            to check the status of your order/request.
+          </p>
+          <p><a href="#" class="btn btn-primary px-4 py-2 text-white">Check Status</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

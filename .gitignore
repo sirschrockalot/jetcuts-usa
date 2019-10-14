@@ -1,0 +1,7 @@
+e2e_test.*
+node_modules
+.settings/
+.vscode/launch.json
+.vscode/settings.json
+modules/.settings
+modules/.vscode

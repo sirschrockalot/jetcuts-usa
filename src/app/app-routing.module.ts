@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'company', component: CompanyComponent },
   { path: 'services', component: ServicesComponent }
-  //   { path: 'home', component: HomepageComponent },
+  // { path: 'home', component: HomepageComponent },
   //   { path: 'home', component: HomepageComponent },
   //   { path: 'home', component: HomepageComponent },
   //   { path: '', component: HomepageComponent }

@@ -25,7 +25,8 @@ export class QuoteComponent {
       contactFormEmail: ['', Validators.compose([Validators.required, Validators.email])],
       contactFormSubjects: ['', Validators.required],
       contactFormMessage: ['', Validators.required],
-      contactFormCopy: ['']
+      contactFormCopy: [''],
+      contactFormFile: ['']
     });
   }
 

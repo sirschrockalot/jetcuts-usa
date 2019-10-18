@@ -42,14 +42,13 @@
             placeholder="E-mail"
           />
 
-          <!-- Subject -->
-          <label>Subject</label>
-          <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
-            <option value="" disabled>Choose File Type</option>
-            <option value="2">Other</option>
-            <option value="3">DWG File</option>
-            <option value="4">DXF File </option>
-          </select>
+          <input
+            type="file"
+            formControlName="contactFormFile"
+            placeholder="File Upload"
+            class="form-control-file"
+            id="exampleFormControlFile1"
+          />
 
           <!-- Message -->
           <div class="form-group">

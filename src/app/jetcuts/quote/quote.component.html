@@ -32,6 +32,16 @@
             placeholder="Name"
           />
 
+          <!-- Name -->
+          <input
+            type="number"
+            formControlName="contactFormNumber"
+            id="defaultContactFormNumber"
+            mdbInput
+            class="form-control mb-4"
+            placeholder="Phone Number"
+          />
+
           <!-- Email -->
           <input
             type="email"
@@ -42,11 +52,13 @@
             placeholder="E-mail"
           />
 
+          <!-- (change)="fileChange($event)" -- /> -->
           <input
             type="file"
             formControlName="contactFormFile"
             placeholder="File Upload"
-            class="form-control-file"
+            class="form-control-file mb-4"
+            mdbInput
             id="exampleFormControlFile1"
           />
 
@@ -57,7 +69,7 @@
               class="form-control rounded-0"
               mdbInput
               id="exampleFormControlTextarea2"
-              rows="3"
+              rows="5"
               placeholder="Message"
             ></textarea>
           </div>

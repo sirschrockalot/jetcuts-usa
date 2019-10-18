@@ -11,9 +11,12 @@ import { ConnectionService } from '../connection-service';
 export class QuoteComponent {
   contactForm: FormGroup;
   disabledSubmitButton = true;
-  optionsSelect: Array<any>;
+  uploadedFiles: Array<File>;
+
+  // optionsSelect: Array<any>;
 
   @HostListener('input') oninput() {
+    console.log(this.contactForm.valid);
     if (this.contactForm.valid) {
       this.disabledSubmitButton = false;
     }
@@ -23,14 +26,21 @@ export class QuoteComponent {
     this.contactForm = fb.group({
       contactFormName: ['', Validators.required],
       contactFormEmail: ['', Validators.compose([Validators.required, Validators.email])],
-      contactFormSubjects: ['', Validators.required],
+      // contactFormSubjects: ['', Validators.required],
       contactFormMessage: ['', Validators.required],
       contactFormCopy: [''],
-      contactFormFile: ['']
+      contactFormFile: [''],
+      contactFormNumber: ['']
     });
   }
 
   onSubmit() {
+    console.log((this.contactForm.value.contactFormFile = this.uploadedFiles[0]));
+
+    for (let i = 0; i < this.uploadedFiles.length; i++) {}
+    //   this.contactForm.setValue(this.contactForm.get(contactFormFile, this.uploadedFiles[i]);
+    // }
+
     this.connectionService.sendMessage(this.contactForm.value).subscribe(
       () => {
         alert('Your message has been sent.');
@@ -41,5 +51,10 @@ export class QuoteComponent {
         console.log('Error', error);
       }
     );
+  }
+
+  fileChange(element) {
+    this.uploadedFiles = element.target.files;
+    console.log(this.uploadedFiles);
   }
 }

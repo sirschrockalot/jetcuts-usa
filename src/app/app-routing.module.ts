@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CompanyComponent } from './jetcuts/company/company.component';
 import { HomepageComponent } from './jetcuts/homepage/homepage.component';
+import { LoginComponent } from './jetcuts/login/login.component';
 import { QuoteComponent } from './jetcuts/quote/quote.component';
 import { ServicesComponent } from './jetcuts/services/services.component';
 
@@ -17,8 +18,8 @@ const routes: Routes = [
   { path: 'quote', component: QuoteComponent },
   { path: '', component: HomepageComponent },
   { path: 'company', component: CompanyComponent },
-  { path: 'services', component: ServicesComponent }
-  // { path: 'home', component: HomepageComponent },
+  { path: 'services', component: ServicesComponent },
+  { path: 'login', component: LoginComponent }
   //   { path: 'home', component: HomepageComponent },
   //   { path: 'home', component: HomepageComponent },
   //   { path: '', component: HomepageComponent }

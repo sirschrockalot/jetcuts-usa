@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, HostListener } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { ConnectionService } from '../connection-service';
 
@@ -9,39 +10,34 @@ import { ConnectionService } from '../connection-service';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent {
-  contactForm: FormGroup;
-  disabledSubmitButton = true;
-  uploadedFiles: Array<File>;
+  disabledSubmitButton = false;
 
-  // optionsSelect: Array<any>;
+  contactForm = new FormGroup({
+    contactFormName: new FormControl(null, Validators.required),
+    contactFormEmail: new FormControl(null, Validators.compose([Validators.required, Validators.email])),
+    contactFormMessage: new FormControl(),
+    contactFormFile: new FormControl(null, Validators.required),
+    contactFormNumber: new FormControl(null, Validators.required)
+    // image: new FormControl(null, Validators.required)
+  });
 
   @HostListener('input') oninput() {
     console.log(this.contactForm.valid);
     if (this.contactForm.valid) {
-      this.disabledSubmitButton = false;
+      this.disabledSubmitButton = true;
     }
   }
 
-  constructor(private fb: FormBuilder, private connectionService: ConnectionService) {
-    this.contactForm = fb.group({
-      contactFormName: ['', Validators.required],
-      contactFormEmail: ['', Validators.compose([Validators.required, Validators.email])],
-      // contactFormSubjects: ['', Validators.required],
-      contactFormMessage: ['', Validators.required],
-      contactFormCopy: [''],
-      contactFormFile: [''],
-      contactFormNumber: ['']
-    });
-  }
+  constructor(
+    private formBuilder: FormBuilder,
+    private connectionService: ConnectionService,
+    private http: HttpClient
+  ) {}
 
   onSubmit() {
-    console.log((this.contactForm.value.contactFormFile = this.uploadedFiles[0]));
+    console.log(this.contactForm.value);
 
-    for (let i = 0; i < this.uploadedFiles.length; i++) {}
-    //   this.contactForm.setValue(this.contactForm.get(contactFormFile, this.uploadedFiles[i]);
-    // }
-
-    this.connectionService.sendMessage(this.contactForm.value).subscribe(
+    this.connectionService.sendMessage1(this.toFormData(this.contactForm.value)).subscribe(
       () => {
         alert('Your message has been sent.');
         this.contactForm.reset();
@@ -53,8 +49,14 @@ export class QuoteComponent {
     );
   }
 
-  fileChange(element) {
-    this.uploadedFiles = element.target.files;
-    console.log(this.uploadedFiles);
+  toFormData<T>(formValue: T) {
+    const formData = new FormData();
+
+    for (const key of Object.keys(formValue)) {
+      const value = formValue[key];
+      formData.append(key, value);
+    }
+
+    return formData;
   }
 }

@@ -14,6 +14,7 @@ import { FooterComponent } from './jetcuts/footer/footer.component';
 import { LoginComponent } from './jetcuts/login/login.component';
 import { QuoteComponent } from './jetcuts/quote/quote.component';
 import { ServicesComponent } from './jetcuts/services/services.component';
+import { FileUploadComponent } from './jetcuts/file-upload/file-upload.component';
 
 const config = new AuthServiceConfig([
   {
@@ -43,7 +44,8 @@ export function provideConfig() {
     FooterComponent,
     LoginComponent,
     CompanyComponent,
-    ServicesComponent
+    ServicesComponent,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,

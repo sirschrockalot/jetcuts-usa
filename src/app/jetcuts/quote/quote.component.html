@@ -52,15 +52,7 @@
             placeholder="E-mail"
           />
 
-          <!-- (change)="fileChange($event)" -- /> -->
-          <input
-            type="file"
-            formControlName="contactFormFile"
-            placeholder="File Upload"
-            class="form-control-file mb-4"
-            mdbInput
-            id="exampleFormControlFile1"
-          />
+          <app-file-upload formControlName="contactFormFile"></app-file-upload>
 
           <!-- Message -->
           <div class="form-group">
@@ -86,12 +78,13 @@
             class="z-depth-0 my-4 waves-effect"
             mdbWavesEffect
             type="submit"
-            [disabled]="disabledSubmitButton"
           >
             Send
           </button>
         </form>
       </div>
+
+      <!-- [disabled]="disabledSubmitButton" -->
 
       <div class="col-lg-4">
         <div class="p-4 mb-3 bg-white">

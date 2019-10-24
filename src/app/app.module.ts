@@ -20,7 +20,7 @@ import { ServicesComponent } from './jetcuts/services/services.component';
 const config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider('1046402052746-2k26ov4dd6hkqdrbn4q6dpj7r4r49nro.apps.googleusercontent.com')
+    provider: new GoogleLoginProvider('1046402052746-sv27kut9cegppudp8qcgvlaiceam3018.apps.googleusercontent.com')
   }
   // {
   //   id: FacebookLoginProvider.PROVIDER_ID,

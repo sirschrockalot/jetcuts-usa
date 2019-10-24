@@ -42,8 +42,13 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/quote']">Contact Us</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!isLoggedIn">
         <a class="nav-link fa fa-shopping-cart" [routerLink]="['/login']"></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link fa fa-shopping-cart" (click)="clicked()">
+          <span *ngIf="isLoggedIn"><img src="{{ this.user.photoUrl }}"/></span
+        ></a>
       </li>
     </ul>
   </div>

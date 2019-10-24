@@ -10,11 +10,12 @@ import { NavbarComponent } from '../app/jetcuts/navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CompanyComponent } from './jetcuts/company/company.component';
+import { FileUploadComponent } from './jetcuts/file-upload/file-upload.component';
 import { FooterComponent } from './jetcuts/footer/footer.component';
+import { LoginPageComponent } from './jetcuts/login-page/login-page.component';
 import { LoginComponent } from './jetcuts/login/login.component';
 import { QuoteComponent } from './jetcuts/quote/quote.component';
 import { ServicesComponent } from './jetcuts/services/services.component';
-import { FileUploadComponent } from './jetcuts/file-upload/file-upload.component';
 
 const config = new AuthServiceConfig([
   {
@@ -45,7 +46,8 @@ export function provideConfig() {
     LoginComponent,
     CompanyComponent,
     ServicesComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,

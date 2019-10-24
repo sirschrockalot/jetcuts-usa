@@ -8,6 +8,7 @@ import { AuthService, FacebookLoginProvider, GoogleLoginProvider, SocialUser } f
 })
 export class LoginComponent implements OnInit {
   user: SocialUser;
+  show: boolean;
 
   constructor(private authService: AuthService) {}
 
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
     this.authService.authState.subscribe(user => {
       this.user = user;
       console.log(user);
+      this.show = false;
     });
   }
 

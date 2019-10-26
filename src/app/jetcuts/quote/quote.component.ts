@@ -39,12 +39,17 @@ export class QuoteComponent {
 
     this.connectionService.sendMessage1(this.toFormData(this.contactForm.value)).subscribe(
       () => {
-        alert('Your message has been sent.');
-        this.contactForm.reset();
-        this.disabledSubmitButton = true;
+        if (this.contactForm.valid) {
+          console.log('Form Submitted!');
+          this.contactForm.reset();
+        }
+        // alert('Your message has been sent.');
+        // this.contactForm.reset();
+        // this.disabledSubmitButton = true;
       },
       error => {
         console.log('Error', error);
+        this.contactForm.reset();
       }
     );
   }

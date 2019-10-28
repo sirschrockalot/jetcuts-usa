@@ -1,4 +1,4 @@
-<div class="site-navbar-top">
+<!-- <div class="site-navbar-top">
   <div class="container py-2">
     <div class="row align-items-center">
       <div class="col-6">
@@ -21,10 +21,12 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <nav class="navbar navbar-light navbar-expand-lg bg-faded justify-content-center ">
-  <a [routerLink]="['/']" class="navbar-brand d-flex w-50 mr-auto"><img src="assets/images/jetcutslogo.png"/></a>
+  <a [routerLink]="['/']" class="navbar-brand d-flex w-50 mr-auto"
+    ><img src="assets/images/jetcutslogo.png" width="200" height="50"
+  /></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -42,14 +44,14 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/quote']">Contact Us</a>
       </li>
-      <li class="nav-item" *ngIf="!isLoggedIn">
+      <!-- <li class="nav-item" *ngIf="!isLoggedIn">
         <a class="nav-link fa fa-shopping-cart" [routerLink]="['/login']"></a>
       </li>
       <li class="nav-item">
         <a class="nav-link fa fa-shopping-cart" (click)="clicked()">
           <span *ngIf="isLoggedIn"><img src="{{ this.user.photoUrl }}"/></span
         ></a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </nav>
